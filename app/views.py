@@ -11,6 +11,10 @@ import json
 parser = reqparse.RequestParser()
 parser.add_argument('image',type=str)
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+    
 @api.route("/predict")
 class predict(Resource):
     '''accepts an image array and returns survey predictions for morphology shape'''
@@ -22,7 +26,5 @@ class predict(Resource):
             prediction = model.predict(image)
         return prediction.tolist()[0]
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+
 
