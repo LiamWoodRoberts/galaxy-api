@@ -4,6 +4,7 @@ from app.predictor import process_image
 
 # Packages
 from flask_restplus import reqparse,Resource
+from flask import render_template
 import numpy as np
 import json
 
@@ -23,5 +24,5 @@ class predict(Resource):
 
 @app.route("/")
 def index():
-    return "GALAXY-MORPHOLOGY-API"
+    return render_template("index.html")
 
