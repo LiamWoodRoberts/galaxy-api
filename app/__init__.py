@@ -5,7 +5,6 @@ from tensorflow import get_default_graph
 app = Flask(__name__)
 
 app = Flask(__name__)
-app.config.from_object('config.Config')
 
 blueprint = Blueprint('api',__name__,url_prefix='/api')
 api_name = 'Galaxy Morphology Predictor'
